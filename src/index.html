@@ -8,7 +8,12 @@
       border: 1px solid #999;
     }
   </style>
-</head>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  <script src="underscore.js"></script>
+  <script src="backbone.js"></script>
+  
+  </head>
 <body>
   <h1>Tasks</h1>
   
@@ -18,23 +23,72 @@
     <ul id="tasks-open">
       <li>
         <label>
-          <input type="checkbox" name="item1" value="">
+          <button type="button">Claim</button>
           <span class="title">Task Name</span>
+		  <span class="users">Other Users</span>
         </label>
+        <p>
+          Task Description
+        </p>
       </li>
     </ul>
 
-    <h2>Your Tasks</h2>    
+    <h2>Your Claimed Tasks</h2>    
     <ul id="tasks-yours">
       <li>
         <label>
-          <input type="checkbox" name="item1" value="">
+          <button type="button"> Completed </button> 
           <span class="title">Task Name</span>
         </label>
+         <p>
+          Task Description
+         </p>
       </li>
     </ul>
     
+	<h2>Other Claimed Tasks</h2>
+		<ul id="tasks-others">
+      <li>
+        <label>
+          <span class="title">Task Name</span>
+          <span class="claimer"> Claimed By</span>
+        </label>
+        <p>
+         Task Description
+        </p>
+      </li> 
+    </ul>
+	
+   <h2>Closed Tasks</h2>
+    <ul id="tasks-closed">
+      <li>
+        <label>
+          <button type="button">Reopen</button>
+          <span class="title"> Task Name</span>
+        </label>
+       <p>
+        Task Description
+       </p>
+      </li>
   </div>
 
+  <div id="templates">
+    <div id="template-task">
+    <label>
+          <button type="button">Reopen</button>
+          <span class="title"> Task Name</span>
+        </label>
+       <p>
+        Task Description
+       </p>
+    </div>
+  </div>
+  
+  <script>
+    $(function() {
+      var taskTemplate = $("#template-task").html();
+      console.log(taskTemplate)
+      });
+  </script>
 </body>
 </html>
