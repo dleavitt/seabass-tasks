@@ -7,13 +7,9 @@ gem "rack-contrib"
 gem "puma"
 gem "rake"
 
-gem "sprockets"
-gem 'sprockets-helpers'
-gem "coffee-script"
-gem "haml"
-gem "compass"
-gem "sprockets-sass"
-gem "sass"
-gem "bootstrap-sass"
+gem "redis", "3.0.1"
+gem "redis-namespace-with-multi", :require => "redis/namespace"
+gem "redis-rack"
 
 gem "omniauth-openid"
+gem "mail"
