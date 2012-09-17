@@ -19,7 +19,10 @@ module SeabassTasks
       provider :open_id, :name => 'google', :identifier => 'https://www.google.com/accounts/o8/id'
     end
     
-    $redis = Redis::Namespace.new(:seabass_tasks, Redis.new(:logger => Logger.new(STDOUT))) 
+    $redis = Redis::Namespace.new(:seabass_tasks, :redis => Redis.new(
+      :url => ENV['REDISTOGO_URL'], 
+      :logger => Logger.new(STDOUT)
+    )) 
     
     helpers do
       def authorized?
